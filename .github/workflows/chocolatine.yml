@@ -37,8 +37,8 @@ jobs:
       
       - run: make clean
 
-      - run: ls  
-
+      - run: ls    
+ 
 
   push_to_mirror:
     runs-on: ubuntu-latest
