@@ -26,11 +26,12 @@ jobs:
       image: https://ghcr.io/epitech/coding-style-checker:latest
     
     defaults:
-      - run:
+      run:
         shell: bash
 
     steps:
-      - uses: "actions/checkout@v3"
+      - name: check_progam_compilation
+        uses: "actions/checkout@v3"
       - run: make re
       
       - run: make clean
