@@ -1,8 +1,14 @@
 name: chocolatine
 run-name: pain-au-chocolat #
-on : [push, pull_request]
-  branches-ignore:
-    - '- ga-ignore-'
+on :
+  push: 
+    branches-ignore:
+      - 'ga-ignore-'
+  pull_request:
+    branches-ignore:
+      - 'ga-ignore-'
+
+
 env:
   MIRROR_URL: https://github.com/EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione
   EXECUTABLE: "a.out,my_hunter"
