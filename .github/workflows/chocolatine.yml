@@ -8,13 +8,13 @@ env:
   EXECUTABLE: "a.out,my_hunter"
 jobs:
   check_coding_style:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     container: ghcr.io/epitech/coding-style-checker:latest
     -steps:
       run: check.sh . .
       
   check_program_compilation:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
     container: ghcr.io/epitech/coding-style-checker:latest
     defaults:
       run:
