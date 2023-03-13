@@ -16,14 +16,14 @@ jobs:
   check_coding_style:
     runs-on: ubuntu-latest
     container: 
-      image: https://ghcr.io/epitech/coding-style-checker:latest
+      image: coding-style-checker:latest
     steps:
       - run: check.sh . .
       
   check_program_compilation:
     runs-on: ubuntu-latest
     container: 
-      image: https://ghcr.io/epitech/coding-style-checker:latest
+      image: coding-style-checker:latest
     
     defaults:
       run:
