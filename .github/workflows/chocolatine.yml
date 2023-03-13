@@ -16,21 +16,21 @@ jobs:
   check_coding_style:
     runs-on: ubuntu-latest
     container: 
-      image: coding-style-checker:latest
+      image: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - run: check.sh . .
       
   check_program_compilation:
     runs-on: ubuntu-latest
     container: 
-      image: coding-style-checker:latest
+      image: ghcr.io/epitech/coding-style-checker:latest
     
     defaults:
       run:
         shell: bash
 
     steps:
-      - name: check_progam_compilation
+      - name: Checkout
         uses: "actions/checkout@v3"
       - run: make re
       
