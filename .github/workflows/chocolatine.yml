@@ -43,14 +43,8 @@ jobs:
 
       - run: |
           ls
-          if test -f ${{ env.EXECUTABLE }} ;then
-          
-            if -x ${{ env.EXECUTABLE }}; then
+          if test -f -x ${{ env.EXECUTABLE }} ;then
               echo "file exists and is executable"
-            else
-              exit 84
-            fi
-          
           else
             exit 84
           fi
