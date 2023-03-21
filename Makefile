@@ -9,7 +9,7 @@ SRC 	= 	$(wildcard src/*.c src/*/*.c lib/my/*.c)
 
 OBJ 	= 	$(SRC:.c=.o)
 
-NAME	= 	a.out
+NAME	= 	b.out
 
 CFLAGS	= 	-g -I./include -Wall -Wextra
 
