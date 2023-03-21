@@ -21,7 +21,7 @@ jobs:
     steps:
       - run: check.sh . .
       - run: |
-        echo "::error file={coding-style-reports.log}, line={0}, endLine={1}, title={TITLE}::{MESSAGE}"
+        echo "::error file=coding-style-reports.log, line=0, endLine=1, title=TITLE::MESSAGE"
 
 
 
