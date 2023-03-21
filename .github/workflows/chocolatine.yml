@@ -42,11 +42,12 @@ jobs:
       - run: make clean 
 
       - run: |
-        if [[test -f ${{ env.EXECUTABLE }} ]]; then
+          if test -f ${{ env.EXECUTABLE }} :
+          then:
             echo "file exists"
-        else
-          exit 84
-        fi
+          else:
+            exit 84
+          fi
 
   push_to_mirror:
     runs-on: ubuntu-latest
