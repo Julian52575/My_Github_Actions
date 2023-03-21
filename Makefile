@@ -27,9 +27,7 @@ fclean:	clean
 re:	fclean all
 
 test_run:
-	gcc -lcriterion tests/*.c \
-		src/get_anthill/*.c \
-		lib/my/*.c \
+	gcc -lcriterion test/*.c src/calcul.c \
 		-I./include -Wall -o unit_test
 	./unit_test
 	rm unit_test
