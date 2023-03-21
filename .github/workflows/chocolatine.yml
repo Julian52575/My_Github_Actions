@@ -43,10 +43,16 @@ jobs:
 
       - run: |
           ls
-          if test -f a.out ;then
-            echo "file exists"
-          #else
-            #exit 84
+          if test -f ${{ env.EXECUTABLE }} ;then
+          
+            if -x ${{ env.EXECUTABLE }}; then
+              echo "file exists and is executable"
+            else
+              exit 84
+            fi
+          
+          else
+            exit 84
           fi
 
   push_to_mirror:
