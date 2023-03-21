@@ -11,7 +11,7 @@ on :
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione.git
-  EXECUTABLE: "a.out,my_hunter" 
+  EXECUTABLE: "a.out" 
 
 jobs:
   check_coding_style:
@@ -37,12 +37,14 @@ jobs:
     steps:
       - name: Checkout
         uses: "actions/checkout@v3"
-      - run: make re
+      - run: make
       
-      - run: make clean
+      - run: make clean 
 
-      - run: ls    
- 
+      - run:
+        if test -f ${{ env.EXECUTABLE }}; then
+            echo "file exists"
+        fi
 
   push_to_mirror:
     runs-on: ubuntu-latest
