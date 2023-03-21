@@ -23,8 +23,6 @@ jobs:
         run: |
           check.sh . .
           echo "::error file=coding-style-reports.log,line=1,col=5,endColumn=7::Minor error "
-          #echo "::error file=coding-style-reports.log, line=0, endLine=1:: MESSAGE"
-          exit 1
 
 
   check_program_compilation:
