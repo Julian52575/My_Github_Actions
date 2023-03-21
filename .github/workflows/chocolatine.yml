@@ -21,7 +21,10 @@ jobs:
     steps:
       - name: coding-style_checker
         run: |
+          check.sh -h
+          check.sh --help
           check.sh . .
+          echo $?
           echo "::error file=coding-style-reports.log,line=1,col=5,endColumn=7::Minor error "
 
 
