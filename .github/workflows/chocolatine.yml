@@ -27,6 +27,7 @@ jobs:
 
   check_program_compilation:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     container: 
       image: ghcr.io/epitech/coding-style-checker:latest
     
