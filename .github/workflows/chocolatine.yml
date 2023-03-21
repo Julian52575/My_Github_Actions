@@ -42,7 +42,8 @@ jobs:
       - run: make clean 
 
       - run:
-        if test -f ${{ env.EXECUTABLE }}; then
+        if test -f ${{ env.EXECUTABLE }} ;
+        then
             echo "file exists"
         else
           exit 84
