@@ -19,9 +19,9 @@ jobs:
     container: 
       image: ghcr.io/epitech/coding-style-checker:latest
     steps:
-      - run: check.sh . .
       - run: |
-        echo "::error file=coding-style-reports.log, line=0, endLine=1, title=TITLE::MESSAGE"
+        check.sh . .
+        echo "::error file=coding-style-reports.log, line=0, endLine=1::MESSAGE"
 
 
 
