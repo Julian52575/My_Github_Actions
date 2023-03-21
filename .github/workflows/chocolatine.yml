@@ -38,11 +38,12 @@ jobs:
       - name: Checkout
         uses: "actions/checkout@v3"
       - run: make
-      
+
       - run: make clean 
 
       - run: |
-          if test -f ${{ env.EXECUTABLE }} :
+          ls
+          if test -f a.out: #${{ env.EXECUTABLE }} :
           then:
             echo "file exists"
           else:
