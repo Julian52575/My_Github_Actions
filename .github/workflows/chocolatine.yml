@@ -43,7 +43,7 @@ jobs:
 
       - run: |
           ls
-          if [[ test -f a.out ]]; then #${{ env.EXECUTABLE }} :then
+          if [[ test -f a.out ]];then
             echo "file exists"
           #else
             #exit 84
