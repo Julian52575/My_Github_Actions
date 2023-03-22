@@ -26,7 +26,8 @@ jobs:
           echo $?
           while read line; do
             echo "::error title="coding"::$line"
-          RESULT=$(wc -l < coding...)
+            done < coding-style-reports.log
+          RESULT=$(wc -l < coding-style-reports.log)
           echo $RESULT
 
   check_program_compilation:
