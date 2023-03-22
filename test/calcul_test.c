@@ -15,6 +15,4 @@ Test(all, calcul)
     cr_assert(multiplication(21, 2) == 42);
 
     cr_assert(division(84, 2) == 42);
-
-    cr_assert(84 + 84 == 42);
 }
