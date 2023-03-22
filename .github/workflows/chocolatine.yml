@@ -27,8 +27,9 @@ jobs:
           while read line; do
             echo "::error title="coding"::$line"
             done < coding-style-reports.log
-          RESULT=$(wc -l < coding-style-reports.log)
-          echo $RESULT
+          if [ (wc -l < coding-style-reports.log) -ne 0 ]; then
+            exit 84
+          fi
 
   check_program_compilation:
     needs: check_coding_style
