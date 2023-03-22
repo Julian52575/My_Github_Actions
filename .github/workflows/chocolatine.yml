@@ -24,8 +24,10 @@ jobs:
           check.sh --help
           check.sh . .
           echo $?
-          echo "::error file=coding-style-reports.log,line=1,col=5,endColumn=7::Minor error "
-
+          while read line; do
+            echo "::error title="coding"::$line"
+          RESULT=$(wc -l < coding...)
+          echo $RESULT
 
   check_program_compilation:
     needs: check_coding_style
