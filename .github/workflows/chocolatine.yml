@@ -3,10 +3,10 @@ run-name: pain-au-chocolat #
 on :
   push: 
     branches-ignore:
-      - 'ga-ignore-'
+      - 'ga-ignore-*'
   pull_request:
     branches-ignore:
-      - 'ga-ignore-'
+      - 'ga-ignore-*'
 
 
 env:
