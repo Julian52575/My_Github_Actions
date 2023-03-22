@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: coding-style_checker
         run: |
-          check.sh . .f
+          check.sh . .
           while read line; do
             echo "::error title="coding"::$line"
           done < coding-style-reports.log
