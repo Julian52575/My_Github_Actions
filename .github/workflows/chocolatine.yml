@@ -11,13 +11,12 @@ on :
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione.git
-  EXECUTABLE: "a.out" 
+  EXECUTABLE: "a.out, my_hunter" 
 
 jobs:
   check_coding_style:
     runs-on: ubuntu-latest
-    container: 
-      image: ghcr.io/epitech/coding-style-checker:latest
+    container: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: coding-style_checker
         run: |
@@ -47,11 +46,14 @@ jobs:
       - run: make clean 
 
       - run: |
-          if test -x ${{ env.EXECUTABLE }} ;then
+          for i in ${{ env.EXECUTABLE }};
+          do
+            if test -x $i ;then
               echo "file exists and is executable"
-          else
-            exit 84
-          fi
+            else
+              exit 84
+            fi
+          done
   
   run_tests:
     needs: check_program_compilation
