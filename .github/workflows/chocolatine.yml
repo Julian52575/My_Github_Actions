@@ -54,13 +54,15 @@ jobs:
   
   run_tests:
     runs-on: ubuntu-latest
+    container:
+      image:  epitechcontent/epitest-docker
     timeout-minutes: 2
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       
-      - run: make tests_run
+      - run: make tests_runrun_tests
   
   push_to_mirror:
     runs-on: ubuntu-latest
