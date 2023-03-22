@@ -26,11 +26,11 @@ fclean:	clean
 
 re:	fclean all
 
-test_run:
+tests_run:
 	gcc -lcriterion test/*.c src/calcul.c \
 		-I./include -Wall -o unit_test
 	./unit_test
 	rm unit_test
 
 .phony:
-	all clean fclean re test_run
+	all clean fclean re tests_run
