@@ -20,13 +20,10 @@ jobs:
     steps:
       - name: coding-style_checker
         run: |
-          check.sh -h
-          check.sh --help
-          check.sh . .
-          echo $?
+          check.sh . .f
           while read line; do
             echo "::error title="coding"::$line"
-            done < coding-style-reports.log
+          done < coding-style-reports.log
           if [ (wc -l < coding-style-reports.log) -ne 0 ]; then
             exit 84
           fi
