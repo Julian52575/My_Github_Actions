@@ -1,6 +1,6 @@
 name: chocolatine
 run-name: pain-au-chocolat #
-on :
+on:
   push: 
     branches-ignore:
       - 'ga-ignore-*'
@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: coding-style_checker
         run: |
+          ls
           check.sh . .
           #while read line; do
             echo "::error title="coding"::$line"
