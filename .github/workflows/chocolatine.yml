@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: coding-style_checker
         run: |
-          ls
           check.sh . .
           #while read line; do
             echo "::error title="coding"::$line"
@@ -35,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     container: 
-      image: ghcr.io/epitech/coding-style-checker:latest
+      image: epitechcontent/epitest-docker
     
     defaults:
       run:
@@ -46,15 +45,13 @@ jobs:
         uses: "actions/checkout@v3"
       - run: make
 
-      - run: |
-          ls
-          make clean 
+      - run: make clean 
 
       - run: |
           for i in ${{ env.EXECUTABLE }};
           do
             if test -x $i ;then
-              echo "file exists and is executable"
+              echo " $i file exists and is executable"
             else
               exit 84
             fi
