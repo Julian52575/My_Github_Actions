@@ -11,7 +11,7 @@ on:
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione.git
-  EXECUTABLE: "a.out, my_hunter" 
+  EXECUTABLE: "a.out" #, my_hunter" 
 
 jobs:
   check_coding_style:
@@ -19,6 +19,8 @@ jobs:
     container: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: coding-style_checker
         run: |
           check.sh . .
@@ -43,6 +45,8 @@ jobs:
     steps:
       - name: Checkout
         uses: "actions/checkout@v3"
+        with:
+          fetch-depth: 0
       - run: make
 
       - run: make clean 
