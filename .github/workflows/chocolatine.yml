@@ -58,7 +58,6 @@ jobs:
       - run: make clean 
 
       - run: |
-          ls
           for i in ${{ env.EXECUTABLE }};
           do
             echo "checking $i"
