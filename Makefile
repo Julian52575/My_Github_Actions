@@ -5,7 +5,8 @@
 ## it makes files
 ##
 
-SRC 	= 	$(wildcard src/*.c src/*/*.c lib/my/*.c)
+SRC 	= 	src/main.c \
+			src/calcul.c
 
 OBJ 	= 	$(SRC:.c=.o)
 
