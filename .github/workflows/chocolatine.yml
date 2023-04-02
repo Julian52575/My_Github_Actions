@@ -25,7 +25,7 @@ jobs:
         run: |
           check.sh $(pwd) $(pwd)
           file="coding-style-reports.log"
-          if [  $(wc -c /etc/passwd | awk '{print $1}') == 0]
+          if [  $(wc -c /etc/passwd | awk '{print $1}') == 0 ]
           then
             exit 0
           fi
