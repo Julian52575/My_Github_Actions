@@ -24,6 +24,7 @@ jobs:
       - name: coding-style-checker
         run: |
           check.sh . .
+          ls
           file="coding-style-reports.log"
           while read -r line
           do
