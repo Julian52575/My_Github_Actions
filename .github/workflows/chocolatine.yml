@@ -11,7 +11,7 @@ on:
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione.git
-  EXECUTABLE: "a.out, my_hunter" 
+  EXECUTABLE: "a.out my_hunter" 
 
 defaults:
   run:
