@@ -5,8 +5,7 @@
 ## it makes files
 ##
 
-SRC 	= 	src/main.c \
-			src/calcul.c
+SRC 	= 	src/main.c src/calcul.c
 
 OBJ 	= 	$(SRC:.c=.o)
 
@@ -18,6 +17,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJ)
 	gcc	$(CFLAGS)  -o $(NAME) $(OBJ)
+	gcc hunter_src/main.c -o my_hunter
 
 clean:
 	rm -f $(OBJ)
@@ -28,8 +28,7 @@ fclean:	clean
 re:	fclean all
 
 tests_run:
-	gcc -lcriterion test/*.c src/calcul.c \
-		-I./include -Wall -o unit_test
+	gcc -lcriterion test/*.c src/calcul.c -I./include -Wall -o unit_test
 	./unit_test
 	rm unit_test
 
