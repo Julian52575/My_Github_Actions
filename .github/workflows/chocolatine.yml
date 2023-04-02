@@ -11,7 +11,7 @@ on:
 
 env:
   MIRROR_URL: git@github.com:EpitechPromo2027/B-DOP-200-NCY-2-1-chocolatine-julian.bottiglione.git
-  EXECUTABLE: "a.out" #, my_hunter" 
+  EXECUTABLE: "a.out, my_hunter" 
 
 jobs:
   check_coding_style:
@@ -24,13 +24,16 @@ jobs:
       - name: coding-style-checker
         run: |
           check.sh $(pwd) $(pwd)
-          echo $?
-          ls
           file="coding-style-reports.log"
+          if [  $(wc -c /etc/passwd | awk '{print $1}') == 0]
+          then
+            exit 0
+          fi
           while read -r line
           do
             echo "::error::$line"
           done < "$file"
+          exit 84
 
   check_program_compilation:
     needs: check_coding_style
