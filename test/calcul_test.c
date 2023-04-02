@@ -6,8 +6,7 @@
 */
 #include <criterion/criterion.h>
 
-Test(all, calcul)
-{
+Test(all, calcul) {
     cr_assert(addition(40, 2) == 42);
 
     cr_assert(soustraction(42 + 21, 21) == 42);

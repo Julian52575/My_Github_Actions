@@ -28,7 +28,8 @@ fclean:	clean
 re:	fclean all
 
 tests_run:
-	gcc -lcriterion test/*.c src/calcul.c -I./include -Wall -o unit_test
+	gcc -lcriterion test/calcul_test.c src/calcul.c \
+		-I./include -Wall -o unit_test
 	./unit_test
 	rm unit_test
 
