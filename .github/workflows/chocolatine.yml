@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
       - name: coding-style-checker
         run: |
-          check.sh . .
+          check.sh $(pwd) $(pwd)
           echo $?
           ls
           file="coding-style-reports.log"
